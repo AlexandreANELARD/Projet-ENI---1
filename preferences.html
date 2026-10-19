@@ -20,6 +20,31 @@
         </nav>
     </header>
 
+    <main>
+        <h2 class="title-preference">Préférences du site</h2>
+
+        <form>
+            <label for="theme">Thème du site</label>
+            <select name="theme" id="theme">
+                <option value="clair" selected>Clair</option>
+                <option value="sombre">Sombre</option>
+            </select>
+            <fieldset>
+                <legend>Type d'affichage</legend>
+                <input type="radio" name="affichage" id="list" value="list" checked>
+                <label for="list">Liste</label>
+                <input type="radio" name="affichage" id="cards" value="cards">
+                <label for="cards">Cartes</label>
+            </fieldset>
+            <button type="button">Enregistrer</button>
+        </form>
+
+        <div class="retour"><a href="index.html">Retour à la page d'Accueil</a></div>
+
+
+
+    </main>
+
 </body>
 
 </html>
