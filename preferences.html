@@ -5,43 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PromoENI - Préférences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-<header>
-    <img src="assets/images/logo.png" alt="logo de l'école ENI">
-    <h1 id="title">Préférences</h1>
-    <nav>
-        <a href="index.html" class="header-button" id="accueil-button">Accueil</a>
-        <a href="preferences.html" class="header-button" id="preferences-button">Préférences</a>
-        <a href="carte.html" class="header-button" id="carte-button">Carte</a>
-        <a href="informations.html" class="header-button" id="infos-button">Informations</a>
-    </nav>
-</header>
+    <header>
+        <img src="assets/images/logo.png" alt="logo de l'école ENI">
+        <h1 id="title">Préférences</h1>
+        <nav>
+            <a href="index.html" class="header-button" id="accueil-button">Accueil</a>
+            <a href="preferences.html" class="header-button" id="preferences-button">Préférences</a>
+            <a href="carte.html" class="header-button" id="carte-button">Carte</a>
+            <a href="informations.html" class="header-button" id="infos-button">Informations</a>
+        </nav>
+    </header>
 
-<main>
-    <h2 class="title-preference">Préférences du site</h2>
+    <main>
+        <h2 class="title-preference">Préférences du site</h2>
 
-    <form>
-        <label for="theme">Thème du site</label>
-        <select name="theme" id="theme">
-            <option value="clair" selected>Clair</option>
-            <option value="sombre">Sombre</option>
-        </select>
-        <fieldset>
-            <legend>Type d'affichage</legend>
-            <input type="radio" name="affichage" id="list" value="list" checked>
-            <label for="list">Liste</label>
-            <input type="radio" name="affichage" id="cards" value="cards">
-            <label for="cards">Cartes</label>
-        </fieldset>
-        <button type="button" id="enregistrer-prefs">Enregistrer</button>
-    </form>
+        <form>
+            <label for="theme">Thème du site</label>
+            <select name="theme" id="theme">
+                <option value="clair" selected>Clair</option>
+                <option value="sombre">Sombre</option>
+            </select>
+            <fieldset>
+                <legend>Type d'affichage</legend>
+                <input type="radio" name="affichage" id="list" value="list" checked>
+                <label for="list">Liste</label>
+                <input type="radio" name="affichage" id="cards" value="cards">
+                <label for="cards">Cartes</label>
+            </fieldset>
+            <button type="button" id="enregistrer-prefs">Enregistrer</button>
+        </form>
 
-    <div class="retour"><a href="index.html">Retour à la page d'Accueil</a></div>
-</main>
+        <div class="retour"><a href="index.html">Retour à la page d'Accueil</a></div>
+    </main>
 
 </body>
 

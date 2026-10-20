@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PromoENI - Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -19,34 +22,34 @@
             <a href="carte.html" class="header-button" id="carte-button">Carte</a>
             <a href="informations.html" class="header-button" id="infos-button">Informations</a>
         </nav>
+    </header>
 
+    <main>
 
         <fieldset>
-            <legend>Type d'affichage</legend>
+            <legend>Type d'affichage : </legend>
             <input type="radio" name="affichage" id="list" value="list" checked>
             <label for="list">Liste</label>
             <input type="radio" name="affichage" id="cards" value="cards">
             <label for="cards">Cartes</label>
         </fieldset>
-    </header>
 
-    <main>
         <h2 id="title-list">Liste des apprenants</h2>
 
-        <table id="tableau-apprenants">
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Ville</th>
-                    <th></th>
-                </tr>
-            </thead>
-
-            <tbody id="liste-apprenants">
-            </tbody>
-
-        </table>
+        <div id="conteneur-tableau">
+            <table id="tableau-apprenants">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Ville</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="liste-apprenants">
+                </tbody>
+            </table>
+        </div>
 
         <p id="placeholder-cartes" style="display: none">La vue carte arrive prochainement</p>
 
