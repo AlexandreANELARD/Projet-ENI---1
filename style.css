@@ -1,7 +1,9 @@
+/* ===== Base ===== */
 * {
-    font-family: "Roboto", sans-serif;
+    font-family: "Robot", sans-serif;
 }
 
+/* ===== En-tête ===== */
 header {
     display: flex;
     justify-content: space-between;
@@ -10,26 +12,23 @@ header {
 
 header nav {
     display: flex;
-    padding: 0.3rem;
     gap: 1rem;
     width: 40rem;
+    padding: 0.3rem;
 }
 
 .header-button {
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    border: solid 1px black;
-    box-shadow: 4px 4px 0px black;
     flex: 1;
-    padding: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-
+    padding: 0.5rem, 1rem;
+    border: solid 1px currentColor;
+    box-shadow: 4px 4px 0 currentColor;
+    color: currentColor;
+    text-align: center;
+    text-decoration: none;
 }
 
-fieldset {
+/* ===== Type d'affichage (accueil) ===== */
+#fieldset-accueil {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,30 +37,31 @@ fieldset {
     border: none;
 }
 
-fieldset legend {
+#fieldset-accueil legend {
     float: right;
 }
 
+/* ===== Affichage en liste (tableau) ===== */
 #conteneur-tableau {
+    width: 55%;
     max-height: 50vh;
     overflow: auto;
     border: solid 1px;
-    width: 55%;
 }
 
 table {
+    width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    width: 100%;
 }
 
 table thead th {
-    background-color: #c8c8c8;
     position: sticky;
     top: 0;
     width: 25%;
+    padding: 0.25rem 0.5rem;
+    background-color: #c8c8c8;
     text-align: start;
-    padding: 0.25rem;
 }
 
 tbody tr:nth-child(odd) {
@@ -70,11 +70,58 @@ tbody tr:nth-child(odd) {
 
 th,
 td {
-    border-right: solid 1px;
     padding: 0.5rem;
+    border-right: solid 1px;
 }
 
 th:last-child,
 td:last-child {
     border-right: none;
+}
+
+/* ===== Affichage en cartes ===== */
+#conteneur-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem
+}
+
+.carte {
+    padding-bottom: 1rem;
+    border: solid 1px currentColor;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.carte p {
+    margin: 0.25rem
+}
+
+.carte a {
+    display: inline-block;
+    margin-top: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: solid 1px currentColor;
+    box-shadow: 4px 4px currentColor;
+    color: currentColor;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* ===== Thème sombre ===== */
+.sombre {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.sombre table thead th {
+    background-color: #3a3a3a;
+}
+
+.sombre tbody tr:nth-child(odd) {
+    background-color: #2a2a2a;
+}
+
+.sombre td a {
+    color: #8ab4f8;
 }

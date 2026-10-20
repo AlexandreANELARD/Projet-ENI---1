@@ -17,7 +17,11 @@ function init() {
     // Page d'accueil : le tbody n'existe que sur cette page
     if (document.getElementById("liste-apprenants") !== null) {
         // Récupération et lecture du JSON
-        fetch("promo.json").then(response => response.json()).then(data => showApprenants(data.apprenants))
+        fetch("promo.json").then(response => response.json()).then(data => {
+            setTable(data.apprenants)
+            setCards(data.apprenants)
+
+        })
 
         const affiLocalStorage = localStorage.getItem("affichage")
         changeAffichage(affiLocalStorage);
@@ -57,7 +61,7 @@ function setPreference() {
 }
 
 
-function showApprenants(apprenants) {
+function setTable(apprenants) {
     let tabApprenants = document.getElementById("liste-apprenants")
     const infosApprenants = ["nom", "prenom", "ville"]
 
@@ -73,30 +77,52 @@ function showApprenants(apprenants) {
         let tabDataDetail = document.createElement("td")
         let detail = document.createElement("a")
         detail.setAttribute("href", "#")
-        detail.innerText = "Détails"
+        detail.innerText = "Détail"
         tabRow.append(tabDataDetail)
         tabDataDetail.append(detail)
 
     }
 }
 
+function setCards(apprenants) {
+    const infosApprenants = ["nom", "prenom", "ville"]
+    const conteneurCartes = document.getElementById("conteneur-cards")
+
+    for (let i = 0; i < apprenants.length; i++) {
+        const carte = document.createElement("div")
+        carte.setAttribute("class", "carte")
+        conteneurCartes.append(carte)
+
+        for (let j = 0; j < infosApprenants.length; j++) {
+            const info = document.createElement("p")
+            info.append(apprenants[i][infosApprenants[j]])
+            carte.append(info)
+        }
+
+        const detail = document.createElement("a")
+        detail.setAttribute("href", "#")
+        detail.innerText = "Détail"
+        carte.append(detail)
+    }
+}
 
 function changeAffichage(mode) {
-    const tableau = document.getElementById("tableau-apprenants")
-    const placeholder = document.getElementById("placeholder-cartes")
+    const tableau = document.getElementById("conteneur-tableau")
+    const cards = document.getElementById("conteneur-cards")
 
     if (mode === "cards") {
         document.getElementById(mode).checked = true
         tableau.style.display = "none"
-        placeholder.style.display = ""
+        cards.style.display = ""
     } else if (mode === "list") {
         document.getElementById(mode).checked = true
         tableau.style.display = ""
-        placeholder.style.display = "none"
+        cards.style.display = "none"
     } else if (mode === null) {
         localStorage.setItem("affichage", "list")
         document.getElementById("list").checked = true
         tableau.style.display = ""
+        cards.style.display = "none"
     }
 }
 
