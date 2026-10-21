@@ -1,6 +1,7 @@
 /* ===== Base ===== */
+
 * {
-    font-family: "Robot", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 /* ===== En-tête ===== */
@@ -19,7 +20,7 @@ header nav {
 
 .header-button {
     flex: 1;
-    padding: 0.5rem, 1rem;
+    padding: 0.5rem 1rem;
     border: solid 1px currentColor;
     box-shadow: 4px 4px 0 currentColor;
     color: currentColor;
@@ -106,6 +107,72 @@ td:last-child {
     color: currentColor;
     text-align: center;
     text-decoration: none;
+}
+
+/* ===== Page préférence ===== */
+
+#page-preference {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grille-preferences {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    row-gap: 1.5rem;
+    width: 45rem;
+}
+
+#grille-preferences select {
+    justify-self: start;
+    /* remplace width: 15% */
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    grid-column: 1 / -1;
+}
+
+fieldset legend {
+    float: left;
+    width: 75%;
+    padding: 0;
+}
+
+#choix-affichage {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="radio"] {
+    margin-left: 0
+}
+
+#bouton-preferences {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#bouton-preferences a,
+#bouton-preferences button {
+    padding: 0.5rem 1rem;
+    border: solid 1px currentColor;
+    box-shadow: 4px 4px 0 currentColor;
+    background: transparent;
+    color: currentColor;
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.title-preference {
+    margin-bottom: 3rem;
 }
 
 /* ===== Thème sombre ===== */

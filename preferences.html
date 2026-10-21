@@ -24,26 +24,37 @@
         </nav>
     </header>
 
-    <main>
+    <main id="page-preference">
         <h2 class="title-preference">Préférences du site</h2>
 
         <form>
-            <label for="theme">Thème du site</label>
-            <select name="theme" id="theme">
-                <option value="clair" selected>Clair</option>
-                <option value="sombre">Sombre</option>
-            </select>
-            <fieldset>
-                <legend>Type d'affichage</legend>
-                <input type="radio" name="affichage" id="list" value="list" checked>
-                <label for="list">Liste</label>
-                <input type="radio" name="affichage" id="cards" value="cards">
-                <label for="cards">Cartes</label>
-            </fieldset>
-            <button type="button" id="enregistrer-prefs">Enregistrer</button>
-        </form>
+            <div id="grille-preferences">
+                <label for="theme">Thème du site</label>
+                <select name="theme" id="theme">
+                    <option value="clair" selected>Clair</option>
+                    <option value="sombre">Sombre</option>
+                </select>
+                <fieldset>
+                    <legend>Format d'affichage de la liste des apprenants</legend>
+                    <div id="choix-affichage">
+                        <div>
+                            <input type="radio" name="affichage" id="list" value="list" checked>
+                            <label for="list">Liste</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="affichage" id="cards" value="cards">
+                            <label for="cards">Cartes</label>
+                        </div>
+                    </div>
 
-        <div class="retour"><a href="index.html">Retour à la page d'Accueil</a></div>
+                </fieldset>
+            </div>
+            <div id="bouton-preferences">
+                <a href="index.html">Retour à la page d'Accueil</a>
+                <button type="button" id="enregistrer-prefs">Enregistrer</button>
+            </div>
+
+        </form>
     </main>
 
 </body>
