@@ -19,6 +19,9 @@ Il se veut le plus honnête possible, et j'atteste sur l'honneur la véracité d
 | `style.css` (page Préférences) | Pistes et explications, plusieurs blocs de code fournis (voir ci-dessous) | La structure HTML de la page, les ajustements, les tests |
 | `style.css` (version nettoyée) | Version remise au propre fournie par l'IA | Je l'ai retapée à la main, bloc par bloc |
 | `script.js` | Erreurs signalées, explications, une fonction corrigée fournie | La logique, les fonctions, les écouteurs, le `localStorage`, le thème |
+| `carte.html` | Aucune aide proposée | CDN de Leaflet ajouté par moi via la documentation officielle, création de la div pour la carte|
+| `script.js` | l'IA a signalé des erreurs de syntaxe | bloc de la page et fonction `setPin` écrite par moi |
+| `style.css` | Aucune aide proposée| Règles de style concernant la carte écrite par moi |
 
 ## Code fourni directement par l'IA
 Ces passages ont été écrits par l'IA, puis retapés par moi et testés :
@@ -28,6 +31,7 @@ Ces passages ont été écrits par l'IA, puis retapés par moi et testés :
 - La fonction `setCards` de `script.js`, fournie en version corrigée à ma demande.
 - Plus tôt, plusieurs fragments courts : largeur du `nav` avec `flex: 1`, `float` sur la légende, bordures du tableau (`border-right`, `th:last-child`).
 - Dans `preferences.html` : la structure corrigée de `#bouton-preferences` (balises croisées) et l'exemple d'une `div` par paire de radios.
+- L’exemple L.map("map").setView(...), L.tileLayer(...).addTo(...) et L.marker([...]).addTo(...), donné avec des coordonnées de Paris. Je l’ai retapé et adapté à Nantes.
 
 ## Apports de l'IA
 - Notions expliquées qui ne sont pas dans mon cours, ou que je n'ai pas retrouvées dans mes supports :
