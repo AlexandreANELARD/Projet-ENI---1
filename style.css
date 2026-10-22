@@ -167,6 +167,10 @@ td:last-child {
     text-align: center;
 }
 
+#page-informations h3 {
+    font-size: 1.1rem
+}
+
 #informations-generales span {
     font-weight: bold;
 }
@@ -193,6 +197,12 @@ td:last-child {
     padding: 1.5rem;
     list-style: none;
 }
+
+.infos-cards ul li a {
+    display: inline-block;
+    padding: 0.5rem;
+}
+
 
 #retour-button {
     margin-top: 1.5rem;
