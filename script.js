@@ -1,3 +1,4 @@
+// Permet de lancer le script quand la page HTML à fini de charger
 window.onload = init
 
 function init() {
@@ -14,7 +15,7 @@ function init() {
         const affiLocalStorage = localStorage.getItem("affichage")
         changeAffichage(affiLocalStorage);
 
-        // Ecouteur pour le changer ponctuel d'affichage
+        // Ecouteur pour le changer ponctuel d'affichage. Il affiche selon quel id a été sélectionné
         ["list", "cards"].forEach(id => {
             document.getElementById(id).addEventListener("change", () => changeAffichage(id));
         })
@@ -35,6 +36,7 @@ function init() {
 
     // Abonnement de la page d'informations
     if (document.getElementById("page-informations")) {
+        // Récupération et lecture du JSON
         fetch("promo.json").then(response => response.json()).then(data => {
             setNbApprenants(data.apprenants)
         })
@@ -48,9 +50,12 @@ function init() {
 
 }
 
+// Fonction qui lit le localStorage selon un paramètre donné et renvoie true ou false
 function checkPreference(which) {
 
     if (which === "both") {
+        // Pas de if/else car l'expression telle quelle renvoie déjà un true/false
+        // Si la valeur retournée est "true" alors c'est que le localStorage est vide
         return localStorage.getItem("theme") === null || localStorage.getItem('affichage') === null
     } else if (which === "theme") {
         return localStorage.getItem("theme") === null
@@ -61,20 +66,24 @@ function checkPreference(which) {
 
 }
 
+// Fonction qui enregistre les choix de l'utilisateur de la page préférence dans le localStorage
 function setPreference() {
     const theme = document.getElementById("theme").value
     const affichage = document.querySelector('input[name="affichage"]:checked').value
 
     localStorage.setItem("theme", theme)
     localStorage.setItem("affichage", affichage)
+
+    // Appel de la fonction changeTheme pour être directement appliqué lors du clique sur le bouton "enregistrer"
     changeTheme(theme)
 }
 
-
+// Fonction créant le tableau en recevant les données du JSON
 function setTable(apprenants) {
     let tabApprenants = document.getElementById("liste-apprenants")
     const infosApprenants = ["nom", "prenom", "ville"]
 
+    // Une double boucle permettant d'afficher les données par rapport au JSON et au tableau JS infosApprenants
     for (let i = 0; i < apprenants.length; i++) {
         let tabRow = document.createElement("tr")
         tabApprenants.append(tabRow)
@@ -94,10 +103,12 @@ function setTable(apprenants) {
     }
 }
 
+// Fonction créant le tableau en recevant les données du JSON
 function setCards(apprenants) {
     const infosApprenants = ["nom", "prenom", "ville"]
     const conteneurCartes = document.getElementById("conteneur-cards")
 
+    // Une double boucle permettant d'afficher les données par rapport au JSON et au tableau JS infosApprenants
     for (let i = 0; i < apprenants.length; i++) {
         const carte = document.createElement("div")
         carte.setAttribute("class", "carte")
@@ -116,6 +127,7 @@ function setCards(apprenants) {
     }
 }
 
+// Fonction permettant permettant d'afficher le tableau ou les cartes selont ce qui a été choisi.
 function changeAffichage(mode) {
     const tableau = document.getElementById("conteneur-tableau")
     const cards = document.getElementById("conteneur-cards")
@@ -128,7 +140,7 @@ function changeAffichage(mode) {
         document.getElementById(mode).checked = true
         tableau.style.display = ""
         cards.style.display = "none"
-    } else if (mode === null) {
+    } else if (mode === null) { // Si c'est null, on initialise l'affichage sur "list" par défaut avant d'afficher le tableau
         localStorage.setItem("affichage", "list")
         document.getElementById("list").checked = true
         tableau.style.display = ""
@@ -136,8 +148,11 @@ function changeAffichage(mode) {
     }
 }
 
+// Fonction qui change le thème du site selon les préférences enregistré dans le localStorage
+// La fonction à un paramètre car elle est appelée 2x : la première lors de l'initialisation avec la valeur du localStorage et la 2e avec la valeur envoyé quand on la choisi dans les préférences
 function changeTheme(mode) {
 
+    // Variable permettant de stocké l'état de l'ancien theme
     let oldMode
 
     if (mode === "sombre") {
@@ -146,6 +161,7 @@ function changeTheme(mode) {
         oldMode = "sombre"
     }
 
+    // Branche conditionnelle permettant de retirer l'ancien theme et d'ajouter le nouveau pour éviter d'avoir un conflit de classe
     if (mode !== null) {
         document.body.classList.remove(oldMode)
         document.body.classList.add(mode)
@@ -155,6 +171,7 @@ function changeTheme(mode) {
     }
 }
 
+// Fonction qui permet d'afficher dynamiquement les nombres d'élèves dans "informations.html"
 function setNbApprenants(apprenants) {
     let nbApprenants = apprenants.length
     let spanNbApprenants = document.getElementById("nbApprenants")
