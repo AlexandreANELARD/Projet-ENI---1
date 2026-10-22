@@ -42,7 +42,18 @@ function init() {
         })
     }
 
+    // Abonnement à la page de la carte
+    if (document.getElementById("page-carte") !== null) {
+        const carte = L.map("map").setView([47.21, -1.55], 12)
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap"
+        }).addTo(carte)
 
+        // Récupération et lecture du JSON
+        fetch("promo.json").then(response => response.json()).then(data => {
+            setPin(data.apprenants, carte)
+        })
+    }
 
     // Application du thème choisi dans les préférences
     const themeLocalStorage = localStorage.getItem("theme")
@@ -177,5 +188,20 @@ function setNbApprenants(apprenants) {
     let spanNbApprenants = document.getElementById("nbApprenants")
 
     spanNbApprenants.innerText = nbApprenants
+
+}
+
+// Fonction ajoutant les petits pins sur la carte pour y afficher l'emplacement des apprenants
+// Elle reçoit la carte créer dans l'init pour y placer les pins, ainsi que les données du JSON où sont notées les coordonnées
+function setPin(apprenants, carte) {
+
+    for (let i = 0; i < apprenants.length; i++) {
+        if (apprenants[i].coordonnees !== undefined) { // Cette condition permet de vérifier si un apprenant a des coordonnées. Si oui, on place le pin, sinon on l'ignore.
+            const latitude = apprenants[i].coordonnees.latitude
+            const longitude = apprenants[i].coordonnees.longitude
+
+            L.marker([latitude, longitude]).addTo(carte)
+        }
+    }
 
 }

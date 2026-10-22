@@ -6,7 +6,11 @@
             "prenom": "Alexandre",
             "ville": "Nantes",
             "avatar": "avatar.png",
-            "anecdotes": "Aime les randonnées en forêt"
+            "anecdotes": "Aime les randonnées en forêt",
+            "coordonnees": {
+                "latitude": "47.2259",
+                "longitude": "-1.6178"
+            }
         },
         {
             "id": 2,
@@ -22,7 +26,11 @@
             "prenom": "Morgane Kathleen",
             "ville": "Nantes",
             "avatar": "avatar.png",
-            "anecdotes": "Prépare une grande course à pied"
+            "anecdotes": "Prépare une grande course à pied",
+            "coordonnees": {
+                "latitude": "47.2163",
+                "longitude": "-1.5496"
+            }
         },
         {
             "id": 4,
@@ -38,7 +46,11 @@
             "prenom": "Aurelie",
             "ville": "Nantes",
             "avatar": "avatar.png",
-            "anecdotes": "Cuisine des pâtisseries maison"
+            "anecdotes": "Cuisine des pâtisseries maison",
+            "coordonnees": {
+                "latitude": "47.2064",
+                "longitude": "-1.5646"
+            }
         },
         {
             "id": 6,
@@ -62,7 +74,11 @@
             "prenom": "Samuel",
             "ville": "Nantes",
             "avatar": "avatar.png",
-            "anecdotes": "Passionné de cinéma des années 80"
+            "anecdotes": "Passionné de cinéma des années 80",
+            "coordonnees": {
+                "latitude": "47.2186",
+                "longitude": "-1.5500"
+            }
         },
         {
             "id": 9,

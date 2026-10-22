@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PromoENI - Carte</title>
+    <!--Import de la police Roboto de Google-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!--Ajout de la librairie Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="script.js" defer></script>
 </head>
 
@@ -24,10 +28,19 @@
         </nav>
     </header>
 
-    <main>
-        <h2>Cartes</h2>
+    <main id="page-carte">
+        <h2 id="title-map">Carte</h2>
+        <div id="map">
+
+        </div>
+
+        <div id="retour-button"><a class="button" href="index.html">Retour à la page d'Accueil</a></div>
+
     </main>
 
+    <!--Ajout de la librairie Leaflet-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </body>
 
 </html>
