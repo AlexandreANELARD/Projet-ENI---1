@@ -126,17 +126,16 @@ td:last-child {
 
 #grille-preferences select {
     justify-self: start;
-    /* remplace width: 15% */
 }
 
-fieldset {
+#page-preference fieldset {
     border: none;
     padding: 0;
     margin: 0;
     grid-column: 1 / -1;
 }
 
-fieldset legend {
+#page-preference fieldset legend {
     float: left;
     width: 75%;
     padding: 0;
@@ -147,7 +146,7 @@ fieldset legend {
     flex-direction: column;
 }
 
-input[type="radio"] {
+#page-preference input[type="radio"] {
     margin-left: 0
 }
 
@@ -158,21 +157,60 @@ input[type="radio"] {
     margin-top: 2rem;
 }
 
-#bouton-preferences a,
-#bouton-preferences button {
+.title-preference {
+    margin-bottom: 3rem;
+}
+
+/* ===== Page informations ===== */
+#title-informations,
+#informations-generales {
+    text-align: center;
+}
+
+#informations-generales span {
+    font-weight: bold;
+}
+
+#card-infos {
+    display: flex;
+    width: 60%;
+    margin: 1rem auto;
+    gap: 2rem;
+}
+
+.description-cards,
+.infos-cards {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.description-cards p,
+.infos-cards ul {
+    flex: 1;
+    border: solid 2.5px currentColor;
+    margin: 0;
+    padding: 1.5rem;
+    list-style: none;
+}
+
+#retour-button {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+/* ===== Style des boutons ===== */
+
+.button {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
     padding: 0.5rem 1rem;
     border: solid 1px currentColor;
     box-shadow: 4px 4px 0 currentColor;
-    background: transparent;
+    text-decoration: none;
     color: currentColor;
     font: inherit;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.title-preference {
-    margin-bottom: 3rem;
 }
 
 /* ===== Thème sombre ===== */
@@ -189,6 +227,7 @@ input[type="radio"] {
     background-color: #2a2a2a;
 }
 
-.sombre td a {
+.sombre td a,
+.sombre ul li a {
     color: #8ab4f8;
 }

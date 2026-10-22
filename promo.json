@@ -63,6 +63,14 @@
             "ville": "Nantes",
             "avatar": "avatar.png",
             "anecdotes": "Passionné de cinéma des années 80"
+        },
+        {
+            "id": 9,
+            "nom": "DEJEANTE",
+            "prenom": "Gabin",
+            "ville": "La Roche-sur-Yon",
+            "avatar": "avatar.png",
+            "anecdotes": "A quitté la formation"
         }
     ]
 }

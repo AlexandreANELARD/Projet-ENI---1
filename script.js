@@ -1,21 +1,9 @@
 window.onload = init
 
 function init() {
-    // Page Préférences : le bouton n'existe que sur cette page
-    if (document.getElementById("enregistrer-prefs") !== null) {
-        if (checkPreference("both")) {
-            setPreference()
-        } else {
-            // Sinon : on remet dans le formulaire les choix enregistrés
-            document.getElementById("theme").value = localStorage.getItem("theme")
-            document.getElementById(localStorage.getItem("affichage")).checked = true
-        }
-        // Création de l'écouteur sur le bouton de la page Préférences
-        document.getElementById("enregistrer-prefs").addEventListener('click', setPreference)
-    }
 
-    // Page d'accueil : le tbody n'existe que sur cette page
-    if (document.getElementById("liste-apprenants") !== null) {
+    // Abonnement de la page d'accueil
+    if (document.getElementById("page-accueil") !== null) {
         // Récupération et lecture du JSON
         fetch("promo.json").then(response => response.json()).then(data => {
             setTable(data.apprenants)
@@ -31,6 +19,28 @@ function init() {
             document.getElementById(id).addEventListener("change", () => changeAffichage(id));
         })
     }
+
+    // Abonnement de la page des préférences
+    if (document.getElementById("page-preference") !== null) {
+        if (checkPreference("both")) {
+            setPreference()
+        } else {
+            // Sinon : on remet dans le formulaire les choix enregistrés
+            document.getElementById("theme").value = localStorage.getItem("theme")
+            document.getElementById(localStorage.getItem("affichage")).checked = true
+        }
+        // Création de l'écouteur sur le bouton de la page Préférences
+        document.getElementById("enregistrer-prefs").addEventListener('click', setPreference)
+    }
+
+    // Abonnement de la page d'informations
+    if (document.getElementById("page-informations")) {
+        fetch("promo.json").then(response => response.json()).then(data => {
+            setNbApprenants(data.apprenants)
+        })
+    }
+
+
 
     // Application du thème choisi dans les préférences
     const themeLocalStorage = localStorage.getItem("theme")
@@ -143,4 +153,12 @@ function changeTheme(mode) {
         localStorage.setItem("theme", "clair")
         document.body.classList.add("clair")
     }
+}
+
+function setNbApprenants(apprenants) {
+    let nbApprenants = apprenants.length
+    let spanNbApprenants = document.getElementById("nbApprenants")
+
+    spanNbApprenants.innerText = nbApprenants
+
 }
