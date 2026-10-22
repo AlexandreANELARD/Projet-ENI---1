@@ -42,10 +42,13 @@ Ces passages ont été écrits par l'IA, puis retapés par moi et testés :
     - Thème sombre : spécificité (`.sombre a` contre `.header-button`), `currentColor`, `.sombre td a`.
     - Cartes et grille : `grid-template-columns` sur le conteneur, `inline-block`.
     - Préférences : `flex-direction: column`, sélecteurs par `id`, grille sur une `div`, `width` et non `height`, remise à zéro des marges par défaut.
-    - Méthode : l'inspecteur du navigateur pour mesurer les décalages.
+    - Le `box-sizing` pour faire correpondre mes éléments avec la fenêtre, utile pour la responsivité
+    - Correction des notions vues lors du cours : `@media`
+    - Lighthouse : L'IA m'a aidé à lire les rapports de l'outils de Google Chrome
   - JS :
     - Erreurs signalées dans `setCards` et `changeAffichage` (portée de `pData`, conteneur absent au chargement, `append[...]`, mauvais élément masqué), que j'ai corrigées moi-même avant de demander la correction de `setCards`.
     - Explications : `const` et objets, `classList.toggle(nom, condition)`.
+    - Commentaires : L'IA à corrigé mes fautes d'orthographe et de syntaxe
 - Autres :
   - Notion : la sous-page sur l'import de police et un récapitulatif des corrections ont été rédigés par l'IA dans mon espace Notion, pour que je les relise.
   - Un QCM d'auto-évaluation sur mon propre code (HTML, CSS, JS).
