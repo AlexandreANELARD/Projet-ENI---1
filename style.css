@@ -13,6 +13,7 @@ header {
 
 header nav {
     display: flex;
+    box-sizing: border-box;
     gap: 1rem;
     width: 40rem;
     padding: 0.3rem;
@@ -44,6 +45,7 @@ header nav {
 
 /* ===== Affichage en liste (tableau) ===== */
 #conteneur-tableau {
+    box-sizing: border-box;
     width: 55%;
     max-height: 50vh;
     overflow: auto;
@@ -83,6 +85,7 @@ td:last-child {
 /* ===== Affichage en cartes ===== */
 #conteneur-cards {
     display: grid;
+    box-sizing: border-box;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.5rem
 }
@@ -240,4 +243,39 @@ td:last-child {
 .sombre td a,
 .sombre ul li a {
     color: #8ab4f8;
+}
+
+/* ===== Responsivité ===== */
+@media (max-width : 750px) {
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #fieldset-accueil {
+        width: 100%;
+    }
+
+    #conteneur-tableau {
+        width: 100%;
+    }
+
+    #conteneur-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #grille-preferences {
+        width: 100%;
+    }
+
+    #card-infos {
+        flex-direction: column;
+        width: 100%;
+    }
 }
