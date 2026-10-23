@@ -21,7 +21,8 @@ Il se veut le plus honnête possible, et j'atteste sur l'honneur la véracité d
 | `script.js` | Erreurs signalées, explications, une fonction corrigée fournie | La logique, les fonctions, les écouteurs, le `localStorage`, le thème |
 | `carte.html` | Aucune aide proposée | CDN de Leaflet ajouté par moi via la documentation officielle, création de la div pour la carte|
 | `script.js` | l'IA a signalé des erreurs de syntaxe | bloc de la page et fonction `setPin` écrite par moi |
-| `style.css` | Aucune aide proposée| Règles de style concernant la carte écrite par moi |
+| `style.css` (page carte) | Aucune aide proposée| Règles de style concernant la carte écrite par moi |
+| `style.css` (modal) | M'a aidé pour centrer le modal au centre de l'écran | Règles de style concernant le modal écrite par moi |
 
 ## Code fourni directement par l'IA
 Ces passages ont été écrits par l'IA, puis retapés par moi et testés :
