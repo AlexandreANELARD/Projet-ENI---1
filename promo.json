@@ -1,4 +1,11 @@
 {
+    "infoSession": {
+        "nom": "D2WM_161",
+        "nbEtudiants": 9,
+        "dateDebut": "21/09/2026",
+        "dateFin": "28/05/2027",
+        "description": "Le but de cette promo est de former de nouveaux développeurs web et web mobile en couvrant le plus de langages de programmation associés comme : HTML, CSS, JS, Java, Angular, Symfony, etc"
+    },
     "apprenants": [
         {
             "id": 1,

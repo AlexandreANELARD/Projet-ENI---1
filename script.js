@@ -38,7 +38,7 @@ function init() {
     if (document.getElementById("page-informations")) {
         // Récupération et lecture du JSON
         fetch("promo.json").then(response => response.json()).then(data => {
-            setNbApprenants(data.apprenants)
+            setInfos(data.infoSession)
         })
     }
 
@@ -58,6 +58,11 @@ function init() {
     // Application du thème choisi dans les préférences
     const themeLocalStorage = localStorage.getItem("theme")
     changeTheme(themeLocalStorage)
+
+    // Récupération et lecture du JSON
+    fetch("promo.json").then(response => response.json()).then(data => {
+        setTitle(data.infoSession)
+    })
 
 }
 
@@ -182,17 +187,31 @@ function changeTheme(mode) {
     }
 }
 
-// Fonction qui permet d'afficher dynamiquement les nombres d'élèves dans "informations.html"
-function setNbApprenants(apprenants) {
-    let nbApprenants = apprenants.length
-    let spanNbApprenants = document.getElementById("nbApprenants")
 
-    spanNbApprenants.innerText = nbApprenants
+// Fonction qui permet l'affichage dynamique du h1 du site
+function setTitle(infoSession) {
+    const titleH1 = document.getElementById("title")
+    titleH1.innerText = "Promo " + infoSession.nom
+}
+
+// Fonction affichant les informations de la promo depuis le JSON sur la page "informations.html"
+function setInfos(infoSession) {
+    // Déclaration des constantes contenant les éléments HTML pour modification dymanique à partir du JSON
+    const dateDebut = document.getElementById("date-debut")
+    const dateFin = document.getElementById("date-fin")
+    const nbApprenants = document.getElementById("nbApprenants")
+    const description = document.getElementById("description-p")
+
+    // Mise à jour des éléments HTML avec les données du JSON
+    dateDebut.innerText = infoSession.dateDebut
+    dateFin.innerText = infoSession.dateFin
+    nbApprenants.innerText = infoSession.nbEtudiants
+    description.innerText = infoSession.description
 
 }
 
 // Fonction ajoutant les petits pins sur la carte pour y afficher l'emplacement des apprenants
-// Elle reçoit la carte créer dans l'init pour y placer les pins, ainsi que les données du JSON où sont notées les coordonnées
+// Elle reçoit la carte créée dans l'init pour y placer les pins, ainsi que les données du JSON où sont notées les coordonnées
 function setPin(apprenants, carte) {
 
     for (let i = 0; i < apprenants.length; i++) {
