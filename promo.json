@@ -12,7 +12,7 @@
             "nom": "ANELARD",
             "prenom": "Alexandre",
             "ville": "Nantes",
-            "avatar": "avatar.png",
+            "avatar": "alexandre.jpg",
             "anecdotes": "Aime les randonnées en forêt",
             "coordonnees": {
                 "latitude": "47.2259",
@@ -32,7 +32,6 @@
             "nom": "LE BOUR",
             "prenom": "Morgane Kathleen",
             "ville": "Nantes",
-            "avatar": "avatar.png",
             "anecdotes": "Prépare une grande course à pied",
             "coordonnees": {
                 "latitude": "47.2163",
